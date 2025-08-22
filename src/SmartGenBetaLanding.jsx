@@ -31,7 +31,7 @@ export default function SmartGenBetaLanding() {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <img
-                                src="/src/assets/smartgen-logo.png"
+                                src="/smartgen-logo.png"
                                 alt="SmartGen Logo"
                                 className="h-8 w-auto"
                                 onError={(e) => {
@@ -117,7 +117,7 @@ export default function SmartGenBetaLanding() {
                                 <div className="flex items-center gap-4 mb-6">
                                     <div className="w-12 h-12">
                                         <img
-                                            src="/src/assets/exclusive-badge.png"
+                                            src="/exclusive-badge.png"
                                             alt="Beta Tester Badge"
                                             className="w-full h-full object-contain"
                                             onError={(e) => {
@@ -166,28 +166,28 @@ export default function SmartGenBetaLanding() {
                                 step: '01',
                                 title: 'Platform Selection',
                                 desc: 'Choose your preferred testing platform and access the appropriate distribution channel.',
-                                image: '/src/assets/app-mockup.png',
+                                image: '/app-mockup.png',
                                 fallback: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '02',
                                 title: 'Application Installation',
                                 desc: 'Install the SmartGen beta application through TestFlight or direct APK distribution.',
-                                image: '/src/assets/app-mockup.png',
+                                image: '/app-mockup.png',
                                 fallback: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '03',
                                 title: 'Testing & Feedback',
                                 desc: 'Engage with the application features and provide structured feedback via integrated forum.',
-                                image: '/src/assets/forum-screen.png',
+                                image: '/forum-screen.png',
                                 fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '04',
                                 title: 'Recognition & Rewards',
                                 desc: 'Receive permanent beta tester status and automatic entry into the prize draw.',
-                                image: '/src/assets/amazon-voucher.png',
+                                image: '/amazon-voucher.png',
                                 fallback: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=200&fit=crop'
                             }
                         ].map((item, index) => (
@@ -231,7 +231,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Permanent Recognition',
                                 desc: 'Exclusive "SmartGen Beta Tester" badge permanently displayed on your user profile, recognising your contribution to product development.',
                                 highlight: 'Lifetime Status',
-                                image: '/src/assets/exclusive-badge.png',
+                                image: '/exclusive-badge.png',
                                 fallback: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop'
                             },
                             {
@@ -239,7 +239,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Prize Draw Participation',
                                 desc: 'Automatic entry into our £500 Amazon voucher prize draw upon successful completion of beta testing requirements.',
                                 highlight: '£500 Value',
-                                image: '/src/assets/test.png',
+                                image: '/test.png',
                                 fallback: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=250&fit=crop'
                             },
                             {
@@ -247,7 +247,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Early Access & Influence',
                                 desc: 'Experience SmartGen before public release and directly influence the final product through structured feedback mechanisms.',
                                 highlight: 'Product Impact',
-                                image: '/src/assets/dashboard-metrics.png',
+                                image: '/dashboard-metrics.png',
                                 fallback: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop'
                             }
                         ].map((benefit, index) => (
@@ -316,7 +316,7 @@ export default function SmartGenBetaLanding() {
                                 <div>
                                     <div className="mb-8">
                                         <img
-                                            src="/src/assets/ios-mockup.png" // Updated path for iOS-specific image
+                                            src="/ios-mockup.png" // Updated path for iOS-specific image
                                             alt="iOS TestFlight Installation"
                                             className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
                                             onError={(e) => {
@@ -353,7 +353,7 @@ export default function SmartGenBetaLanding() {
                                 <div>
                                     <div className="mb-8">
                                         <img
-                                            src="/src/assets/android-mockup.png" // Updated path for Android-specific image
+                                            src="/android-mockup.png" // Updated path for Android-specific image
                                             alt="Android APK Installation"
                                             className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
                                             onError={(e) => {
@@ -434,7 +434,7 @@ export default function SmartGenBetaLanding() {
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="flex items-center gap-3 mb-4 md:mb-0">
                             <img
-                                src="/src/assets/smartgen-logo.png"
+                                src="/smartgen-logo.png"
                                 alt="SmartGen Logo"
                                 className="h-10 w-auto"
                                 onError={(e) => {
