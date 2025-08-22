@@ -101,7 +101,7 @@ export default function SmartGenBetaLanding() {
                             {/* Hero Image */}
                             <div className="relative mb-8">
                                 <img
-                                    src="/src/assets/hero.png"
+                                    src="/hero.png"
                                     alt="SmartGen Energy Analytics Dashboard"
                                     className="w-3/4 mx-auto h-auto object-contain"
                                     onError={(e) => {
