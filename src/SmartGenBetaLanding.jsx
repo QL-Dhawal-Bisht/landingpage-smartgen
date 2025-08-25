@@ -166,28 +166,28 @@ export default function SmartGenBetaLanding() {
                                 step: '01',
                                 title: 'Platform Selection',
                                 desc: 'Choose your preferred testing platform and access the appropriate distribution channel.',
-                                image: '/app-mockup.png',
+                                image: '/platform.png',
                                 fallback: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '02',
                                 title: 'Application Installation',
                                 desc: 'Install the SmartGen beta application through TestFlight or direct APK distribution.',
-                                image: '/app-mockup.png',
+                                image: '/application.png',
                                 fallback: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '03',
                                 title: 'Testing & Feedback',
                                 desc: 'Engage with the application features and provide structured feedback via integrated forum.',
-                                image: '/forum-screen.png',
+                                image: '/testing.png',
                                 fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop'
                             },
                             {
                                 step: '04',
                                 title: 'Recognition & Rewards',
                                 desc: 'Receive permanent beta tester status and automatic entry into the prize draw.',
-                                image: '/amazon-voucher.png',
+                                image: '/recog.png',
                                 fallback: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=200&fit=crop'
                             }
                         ].map((item, index) => (
@@ -231,7 +231,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Permanent Recognition',
                                 desc: 'Exclusive "SmartGen Beta Tester" badge permanently displayed on your user profile, recognising your contribution to product development.',
                                 highlight: 'Lifetime Status',
-                                image: '/exclusive-badge.png',
+                                image: '/permanent.png',
                                 fallback: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop'
                             },
                             {
@@ -239,7 +239,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Prize Draw Participation',
                                 desc: 'Automatic entry into our £500 Amazon voucher prize draw upon successful completion of beta testing requirements.',
                                 highlight: '£500 Value',
-                                image: '/test.png',
+                                image: '/prize.png',
                                 fallback: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=250&fit=crop'
                             },
                             {
@@ -247,7 +247,7 @@ export default function SmartGenBetaLanding() {
                                 title: 'Early Access & Influence',
                                 desc: 'Experience SmartGen before public release and directly influence the final product through structured feedback mechanisms.',
                                 highlight: 'Product Impact',
-                                image: '/dashboard-metrics.png',
+                                image: '/early.png',
                                 fallback: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop'
                             }
                         ].map((benefit, index) => (
@@ -316,7 +316,7 @@ export default function SmartGenBetaLanding() {
                                 <div>
                                     <div className="mb-8">
                                         <img
-                                            src="/ios-mockup.png" // Updated path for iOS-specific image
+                                            src="/ios.png" // Updated path for iOS-specific image
                                             alt="iOS TestFlight Installation"
                                             className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
                                             onError={(e) => {
@@ -353,7 +353,7 @@ export default function SmartGenBetaLanding() {
                                 <div>
                                     <div className="mb-8">
                                         <img
-                                            src="/android-mockup.png" // Updated path for Android-specific image
+                                            src="/andro.png" // Updated path for Android-specific image
                                             alt="Android APK Installation"
                                             className="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg"
                                             onError={(e) => {
