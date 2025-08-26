@@ -1,17 +1,26 @@
 
 import React, { useState } from 'react';
-import { ArrowRight, Download, Award, Target, Users, Shield, ChevronRight, X } from 'lucide-react';
+import { ArrowRight, Download, Award, Target, Users, Shield, ChevronRight, X, Check, Lightbulb, Home, ChartBar } from 'lucide-react';
 
 export default function SmartGenBetaLanding() {
     const [activeTab, setActiveTab] = useState('ios');
     const [showTermsModal, setShowTermsModal] = useState(false);
+    const [agreedToTerms, setAgreedToTerms] = useState(false);
 
     const handleiOSDownload = () => {
-        window.open('https://testflight.apple.com/join/smartgen-beta', '_blank');
+        if (agreedToTerms) {
+            window.open('https://testflight.apple.com/join/smartgen-beta', '_blank');
+        } else {
+            setShowTermsModal(true);
+        }
     };
 
     const handleAndroidDownload = () => {
-        window.open('https://smartgenenergy.com/android-beta', '_blank');
+        if (agreedToTerms) {
+            window.open('https://smartgenenergy.com/android-beta', '_blank');
+        } else {
+            setShowTermsModal(true);
+        }
     };
 
     const openTermsModal = (e) => {
@@ -62,39 +71,34 @@ export default function SmartGenBetaLanding() {
                             </div>
 
                             <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                Be One of the First<br />
-                                <span className="text-emerald-600">Be Recognised Forever</span>
+                                Discover How Your Home's<br />
+                                <span className="text-emerald-600">Energy Performance Stacks Up</span><br />
+                                <span className="text-3xl">– Free Beta Access</span>
                             </h1>
 
-
-
                             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                                Join our exclusive beta testing programme and receive permanent recognition as a founding contributor, plus eligibility for a £500 Amazon voucher prize draw.
+                                SmartGen analyses your home across 30+ key energy metrics and gives you AI-powered recommendations to improve. See your personalised score, compare against similar homes, and learn how to cut waste – all completely free during beta.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-6">
                                 <button
                                     onClick={handleiOSDownload}
-                                    className="px-8 py-4 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 transition-colors flex items-center justify-center gap-3 shadow-lg"
+                                    className="px-8 py-4 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-800 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl cursor-pointer"
                                 >
                                     <Download className="w-5 h-5" />
                                     TestFlight (iOS)
                                 </button>
                                 <button
                                     onClick={handleAndroidDownload}
-                                    className="px-8 py-4 bg-white border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-3 shadow-lg"
+                                    className="px-8 py-4 bg-white border-2 border-gray-900 text-gray-900 rounded-full font-semibold hover:bg-gray-50 hover:scale-105 transition-all duration-200 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl cursor-pointer"
                                 >
                                     <Download className="w-5 h-5" />
                                     APK Beta (Android)
                                 </button>
                             </div>
+                            
+                            <p className="text-sm text-emerald-700 font-medium mb-12">Free to download, free to use – no cost during beta.</p>
 
-                            <div className="text-sm text-gray-600">
-                                By participating, you agree to our{' '}
-                                <a href="#" onClick={openTermsModal} className="text-emerald-600 hover:underline font-medium">
-                                    Beta Testing Terms & Conditions
-                                </a>
-                            </div>
                         </div>
 
                         <div className="relative">
@@ -150,132 +154,98 @@ export default function SmartGenBetaLanding() {
                 </div>
             </section>
 
-            {/* Process Section */}
+            {/* About the App Section */}
             <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Participation Process</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">What is SmartGen?</h2>
                         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                            A streamlined approach to beta testing with automatic registration and integrated feedback systems.
+                            SmartGen is a new UK energy insights app designed to help households understand and improve their energy efficiency. By analysing 30+ factors – from property size and insulation type to heating and usage habits – the app generates a unique energy score. But we don't stop there: SmartGen also uses AI to give you tailored recommendations on how to make your home more efficient.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-4 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8">
                         {[
                             {
-                                step: '01',
-                                title: 'Platform Selection',
-                                desc: 'Choose your preferred testing platform and access the appropriate distribution channel.',
-                                image: '/platform.png',
-                                fallback: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=200&fit=crop'
+                                icon: Home,
+                                title: '30+ Energy Metrics',
+                                desc: 'Comprehensive analysis of your property including size, insulation, heating systems, and usage patterns to generate your unique energy score.',
+                                color: 'from-emerald-400 to-teal-500'
                             },
                             {
-                                step: '02',
-                                title: 'Application Installation',
-                                desc: 'Install the SmartGen beta application through TestFlight or direct APK distribution.',
-                                image: '/application.png',
-                                fallback: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=200&fit=crop'
+                                icon: ChartBar,
+                                title: 'Smart Comparisons',
+                                desc: 'See how your home performs against similar properties in your area and understand where you stand in energy efficiency.',
+                                color: 'from-teal-400 to-cyan-500'
                             },
                             {
-                                step: '03',
-                                title: 'Testing & Feedback',
-                                desc: 'Engage with the application features and provide structured feedback via integrated forum.',
-                                image: '/testing.png',
-                                fallback: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop'
-                            },
-                            {
-                                step: '04',
-                                title: 'Recognition & Rewards',
-                                desc: 'Receive permanent beta tester status and automatic entry into the prize draw.',
-                                image: '/recog.png',
-                                fallback: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=300&h=200&fit=crop'
+                                icon: Lightbulb,
+                                title: 'AI-Powered Insights',
+                                desc: 'Get personalised recommendations tailored to your home to reduce costs and improve your energy performance score.',
+                                color: 'from-cyan-400 to-emerald-500'
                             }
-                        ].map((item, index) => (
-                            <div key={index} className="relative">
-                                <div className="mb-6">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-48 object-cover rounded-2xl mb-4 shadow-lg"
-                                        onError={(e) => {
-                                            e.target.src = item.fallback;
-                                        }}
-                                    />
-                                    <div className="absolute top-2 left-2 bg-gradient-to-br from-emerald-400 to-teal-500 text-white px-3 py-1 rounded-xl text-sm font-bold">
-                                        {item.step}
-                                    </div>
+                        ].map((feature, index) => (
+                            <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-shadow">
+                                <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
+                                    <feature.icon className="w-8 h-8 text-white" />
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
-                                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
-                                {index < 3 && (
-                                    <ChevronRight className="hidden md:block absolute -right-4 top-24 w-6 h-6 text-emerald-300" />
-                                )}
+                                <h3 className="text-xl font-semibold text-gray-900 mb-4">{feature.title}</h3>
+                                <p className="text-gray-700 leading-relaxed">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Benefits Section */}
+            {/* Comparison Section */}
             <section className="bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Programme Benefits</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">How Does Your Home Compare?</h2>
+                        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                            Your energy score isn't just a number. SmartGen benchmarks your home against similar properties so you'll know if you're ahead of the curve or where you could save more.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* AI Recommendations Section */}
+            <section className="py-20 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Personalised Insights with AI</h2>
+                        <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                            Our AI engine turns complex energy data into simple, practical advice. From reducing heating costs to improving insulation and lighting, SmartGen gives you clear steps to save money and cut your carbon footprint.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Beta Tester Benefits Section */}
+            <section className="bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 py-20">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Join the Beta?</h2>
                         <p className="text-xl text-gray-700">Exclusive advantages for beta testing participants</p>
                     </div>
 
-                    <div className="grid lg:grid-cols-3 gap-8">
-                        {[
-                            {
-                                icon: Award,
-                                title: 'Permanent Recognition',
-                                desc: 'Exclusive "SmartGen Beta Tester" badge permanently displayed on your user profile, recognising your contribution to product development.',
-                                highlight: 'Lifetime Status',
-                                image: '/permanent.png',
-                                fallback: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop'
-                            },
-                            {
-                                icon: Target,
-                                title: 'Prize Draw Participation',
-                                desc: 'Automatic entry into our £500 Amazon voucher prize draw upon successful completion of beta testing requirements.',
-                                highlight: '£500 Value',
-                                image: '/prize.png',
-                                fallback: 'https://images.unsplash.com/photo-1607863680198-23d4b2565df0?w=400&h=250&fit=crop'
-                            },
-                            {
-                                icon: Users,
-                                title: 'Early Access & Influence',
-                                desc: 'Experience SmartGen before public release and directly influence the final product through structured feedback mechanisms.',
-                                highlight: 'Product Impact',
-                                image: '/early.png',
-                                fallback: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop'
-                            }
-                        ].map((benefit, index) => (
-                            <div key={index} className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
-                                <div className="relative">
-                                    <img
-                                        src={benefit.image}
-                                        alt={benefit.title}
-                                        className="w-full h-48 object-cover"
-                                        onError={(e) => {
-                                            e.target.src = benefit.fallback;
-                                        }}
-                                    />
-                                    <div className="absolute top-4 right-4 px-4 py-2 bg-gradient-to-r from-emerald-400 to-teal-500 text-white rounded-full text-sm font-medium">
-                                        {benefit.highlight}
+                    <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
+                        <ul className="space-y-4">
+                            {[
+                                'Free access for all testers – no charges during beta',
+                                'AI-powered recommendations to improve your home\'s energy score',
+                                'Lifetime recognition badge as a founding contributor',
+                                'Eligibility for a £500 Amazon voucher prize draw',
+                                'Influence the final app with your feedback'
+                            ].map((benefit, index) => (
+                                <li key={index} className="flex items-start gap-3">
+                                    <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <Check className="w-4 h-4 text-emerald-600" />
                                     </div>
-                                </div>
-                                <div className="p-8">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-10 h-10 bg-emerald-50 rounded-2xl flex items-center justify-center">
-                                            <benefit.icon className="w-5 h-5 text-emerald-600" />
-                                        </div>
-                                        <h3 className="text-xl font-semibold text-gray-900">{benefit.title}</h3>
-                                    </div>
-                                    <p className="text-gray-700 leading-relaxed">{benefit.desc}</p>
-                                </div>
-                            </div>
-                        ))}
+                                    <span className="text-gray-700 text-lg">{benefit}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -430,6 +400,11 @@ export default function SmartGenBetaLanding() {
 
             {/* Footer */}
             <footer className="bg-gradient-to-br from-teal-50 via-emerald-50 to-cyan-50 py-12">
+                <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
+                    <p className="text-sm text-gray-700">
+                        By participating, you agree to our Beta Testing Terms & Conditions.
+                    </p>
+                </div>
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="flex items-center gap-3 mb-4 md:mb-0">
@@ -593,13 +568,34 @@ export default function SmartGenBetaLanding() {
                                 <p className="text-xs text-gray-600">SmartGen Technology Ltd (company no. 14816415) is the data controller for the Beta. We process limited personal data (e.g., device data, diagnostics, forum posts) to run the Beta, improve the app and administer the prize draw. For details, including your UK GDPR rights and how to contact us or the ICO, please see our Privacy Policy: privacy@smartgenenergy.com</p>
                             </div>
                         </div>
-                        <div className="border-t border-gray-200 bg-gray-50 flex justify-end">
-                            <button
-                                onClick={closeTermsModal}
-                                className="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
-                            >
-                                I Understand
-                            </button>
+                        <div className="border-t border-gray-200 bg-gray-50 p-4">
+                            <div className="flex items-start gap-3 mb-4">
+                                <input
+                                    type="checkbox"
+                                    id="modal-terms-checkbox"
+                                    checked={agreedToTerms}
+                                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                                    className="mt-1 w-4 h-4 text-emerald-600 border-gray-300 rounded focus:ring-emerald-500"
+                                />
+                                <label htmlFor="modal-terms-checkbox" className="text-sm text-gray-700">
+                                    I agree to the Beta Testing Terms & Conditions
+                                </label>
+                            </div>
+                            <div className="flex justify-between">
+                                <button
+                                    onClick={closeTermsModal}
+                                    className="px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    onClick={closeTermsModal}
+                                    className="px-6 py-3 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-colors"
+                                    disabled={!agreedToTerms}
+                                >
+                                    Continue to Download
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
