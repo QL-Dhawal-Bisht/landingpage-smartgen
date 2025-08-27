@@ -96,7 +96,7 @@ export default function SmartGenBetaLanding() {
                                     APK Beta (Android)
                                 </button>
                             </div>
-                            
+
                             <p className="text-sm text-emerald-700 font-medium mb-12">Free to download, free to use – no cost during beta.</p>
 
                         </div>
@@ -424,7 +424,7 @@ export default function SmartGenBetaLanding() {
                         </div>
                         <div className="text-sm text-gray-700 text-center md:text-right">
                             <p>Registered in England and Wales • Company No. 14816415</p>
-                            <p className="mt-2">
+                            {/* <p className="mt-2">
                                 <a href="#" onClick={openTermsModal} className="text-emerald-600 hover:underline font-medium">
                                     Beta Testing Terms & Conditions
                                 </a>
@@ -432,7 +432,7 @@ export default function SmartGenBetaLanding() {
                                 <a href="/privacy" className="text-emerald-600 hover:underline font-medium">
                                     Privacy Policy
                                 </a>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>
