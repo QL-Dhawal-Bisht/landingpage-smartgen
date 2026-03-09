@@ -1,2 +1,1 @@
-#!/bin/bash
-ngrok http 80
+IyEvYmluL2Jhc2gKbmctb2tvZyBodHRwIDgw
